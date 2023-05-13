@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(morgan('tiny'));
 app.use(
   cors({
-    origin: 'https://chat-frontend-bppt.vercel.app',
+    origin: ['https://chat-frontend-bppt.vercel.app' , 'http://127.0.0.1:5173' ],
   })
 );
 
