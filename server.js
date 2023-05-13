@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(morgan('tiny'));
 app.use(
   cors({
-    origin: 'http://mern-chat-app.onrender.com',
+    origin: 'https://chat-frontend-bppt.vercel.app',
   })
 );
 
@@ -34,7 +34,7 @@ const server = app.listen(port, () => {
 
 const io = socket(server, {
   cors: {
-    origin: 'http://mern-chat-app.onrender.com',
+    origin: 'https://chat-frontend-bppt.vercel.app',
     Credentials: true,
   },
 });
