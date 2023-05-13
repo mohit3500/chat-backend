@@ -12,7 +12,10 @@ app.use(express.json());
 app.use(morgan('tiny'));
 app.use(
   cors({
-    origin: ['https://chat-frontend-bppt.vercel.app' , 'http://127.0.0.1:5173' ],
+    origin: [
+      'https://master--friendly-sable-168f2f.netlify.app',
+      'http://127.0.0.1:5173',
+    ],
   })
 );
 
@@ -34,7 +37,10 @@ const server = app.listen(port, () => {
 
 const io = socket(server, {
   cors: {
-    origin: 'https://chat-frontend-bppt.vercel.app',
+    origin: [
+      'https://master--friendly-sable-168f2f.netlify.app',
+      'http://127.0.0.1:5173',
+    ],
     Credentials: true,
   },
 });
