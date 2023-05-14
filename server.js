@@ -10,7 +10,12 @@ const port = process.env.port;
 
 app.use(express.json());
 app.use(morgan('tiny'));
-app.use(cors({}));
+app.use(
+  cors({
+    origin: 'https://master--friendly-sable-168f2f.netlify.app',
+    credential: true,
+  })
+);
 
 app.use('/api', require('./routes/authRoute'));
 app.use('/api/message', require('./routes/messageRoute'));
@@ -29,7 +34,10 @@ const server = app.listen(port, () => {
 });
 
 const io = socket(server, {
-  cors: {},
+  cors: {
+    origin: 'https://master--friendly-sable-168f2f.netlify.app',
+    credential: true,
+  },
 });
 
 global.onlineUsers = new Map();
